@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tic-Tac-Toe</title>
+	<style>
+		
+		@import url('https://fonts.googleapis.com/css?family=Bitter|Fjalla+One|Indie+Flower|Macondo');
+
+		body{
+			width: 550px;
+			margin: auto;
+			background-color: #FCCEB3;
+			/*background colors from site called coolors.co*/
+		}
+
+		h1{
+			border-bottom: solid;
+			font-family: 'Macondo', cursive;
+		}
+
+		.Square{
+			height:80px; 
+			width: 80px;
+			font-size: 40pt;
+			text-align: center;
+			font-weight: bold; 
+			font-family: 'Fjalla One',sans-serif;
+			color: red;
+
+		} 
+
+		#message{
+			font-size: 18pt;
+			font-family:'Indie Flower',cursive;
+		}
+	</style> 
+</head>
+<body onload="init();">
+	<h1>Tic Tac Toe Game: JavaScript</h1>
+	<div id = "message">Who's Turn is it Right Now?</div>
+	<table border = "1">
+		<tr>
+			<td class = "Square" onclick="placeMarker(this)"></td>
+			<td class = "Square" onclick="placeMarker(this)"></td>
+			<td class = "Square" onclick="placeMarker(this)"></td>
+		</tr>
+		<tr>
+			<td class = "Square" onclick="placeMarker(this)"></td>
+			<td class = "Square" onclick="placeMarker(this)"></td>
+			<td class = "Square" onclick="placeMarker(this)"></td>
+		</tr>
+		<tr>
+			<td class = "Square" onclick="placeMarker(this)"></td>
+			<td class = "Square" onclick="placeMarker(this)"></td>
+			<td class = "Square" onclick="placeMarker(this)"></td>
+		</tr>
+	</table>
+
+	<script src="js/tictactoe.js"></script>
+</body>
+</html>
