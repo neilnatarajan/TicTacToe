@@ -4,6 +4,7 @@
 let X  = "X";
 let O  = "O";
 let Blank = "";
+let counter = 0;
 
 // there are 8 winning coniditions for a 3x3 box in tic tac toe 
 let winningOutcomes = [[0,1,2], [3,4,5],[6,7,8],
@@ -12,14 +13,32 @@ let winningOutcomes = [[0,1,2], [3,4,5],[6,7,8],
 let gameOver = false;
 
 function init(){
+
+	for(let i =0; i < 9; i++){
+		document.getElementById("" + i).innerText = '';
+	}
+	counter = 0;
 	document.turn = X;
+	document.winner = null;
 	setMessage("Player " + document.turn + " gets to Start.");
 }
 
 function placeMarker(square){
+	console.log(counter);
+	
+
+	if(document.winner != null){
+		setMessage("Player: " + document.winner + " has already won the game!");
+		return;
+	}
+
 	if (square.innerText == Blank) {
+		counter++;
 		square.innerText = document.turn;
 		switchTurn();
+		if(counter == 9 && document.winner==null){
+			setMessage("Cat's Game, Player X and O have tied. Play Again?");
+		}
 	}
 	else{
 		setMessage("Square has been taken.");
@@ -34,6 +53,7 @@ function switchTurn(){
 
 	if(checkState(document.turn)){
 		setMessage("Player: " + document.turn + " has won the game!");
+		document.winner = document.turn;
 		return;
 	}
 	
@@ -72,5 +92,11 @@ function checkState(marker){
 
 
 }
+
+function newGame(square){
+
+}
+
+
 
 
